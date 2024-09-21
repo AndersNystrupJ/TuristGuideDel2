@@ -27,10 +27,10 @@ public class TouristService {
         return touristRepository.addAttraction(touristAttraction);
     }
 
-    public TouristAttraction updateAttraction(TouristAttraction touristAttraction){
+    /*public TouristAttraction updateAttraction(TouristAttraction touristAttraction){
         touristRepository.updateAttraction(touristAttraction);
         return touristAttraction;
-    }
+    }*/
 
     public boolean deleteTouristAttractionByName(String name) {
         List<TouristAttraction> attractions = getAllTouristAttractions();
@@ -38,8 +38,18 @@ public class TouristService {
         // Find the attraction by name and remove it
         return attractions.removeIf(attraction -> attraction.getName().equalsIgnoreCase(name));
     }
+    public TouristAttraction updateAttraction(TouristAttraction updatedAttraction){
+        TouristAttraction excistingAttraction = findAttractionByName(updatedAttraction.getName());
+        if (excistingAttraction != null){
+            excistingAttraction.setDescription(updatedAttraction.getDescription());
+            excistingAttraction.setName(updatedAttraction.getName());
+            excistingAttraction.setLokation(updatedAttraction.getCity());
+            return excistingAttraction;
+        }
+        return null;
+    }
 
 
+   }
 
 
-}
