@@ -116,7 +116,7 @@ public class TouristController {
     }
 
 
-    @GetMapping("{name}/edit")
+    @GetMapping("/{name}/edit")
     public String editAttraction (@PathVariable("name") String name, Model model) {
         TouristAttraction attraction = touristService.findAttractionByName(name);
         model.addAttribute("attraction", attraction);
@@ -128,5 +128,6 @@ public class TouristController {
         touristService.updateAttraction(touristAttraction);
         return "redirect:/attractions";
     }
+
 
 }

@@ -46,6 +46,7 @@ public class TouristRepository {
     public List<TouristAttraction> getAllTouristAttractions() {
         return touristAttractions;
     }
+
     public TouristAttraction updateAttraction(TouristAttraction touristAttraction){
         TouristAttraction touristAttractionMatch = null;
         for (TouristAttraction attraction : getAllTouristAttractions()) {

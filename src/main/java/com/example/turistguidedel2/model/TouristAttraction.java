@@ -51,4 +51,8 @@ public class TouristAttraction {
     public void setLokation(String city) {
         this.city = city;
     }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 }

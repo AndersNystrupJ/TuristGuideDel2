@@ -24,6 +24,11 @@
                 <input type="button" value="Tags">
             </a>
         </td>
+        <td>
+            <a th:href="@{'/attractions/' + ${attraction.name} + '/edit'}">
+                <input type="button" value="Edit">
+            </a>
+        </td>
 
     </tr>
     </tbody>
