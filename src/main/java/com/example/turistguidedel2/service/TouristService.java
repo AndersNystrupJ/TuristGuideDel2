@@ -55,6 +55,10 @@ public class TouristService {
         return null;
     }
 
+    public void deleteAttraction(TouristAttraction touristAttraction){
+        touristRepository.deleteAttraction(touristAttraction);
+    }
+
 
    }
 

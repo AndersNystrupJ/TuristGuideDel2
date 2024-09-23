@@ -63,5 +63,8 @@ public class TouristRepository {
     public void addTouristAttraction(TouristAttraction touristAttraction) {
         touristAttractions.add(touristAttraction);
     }
+    public void deleteAttraction(TouristAttraction touristAttraction) {
+        touristAttractions.remove(touristAttraction);
+    }
 
 }

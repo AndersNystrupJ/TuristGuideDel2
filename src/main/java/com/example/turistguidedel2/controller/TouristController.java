@@ -61,7 +61,7 @@ public class TouristController {
         }
     }*/
 
-    @DeleteMapping("delete/name")
+    /*@DeleteMapping("delete/name")
     public ResponseEntity<String> deleteAttractionByName(@RequestBody TouristAttraction touristAttraction){
         String attractionName = touristAttraction.getName();
         boolean isDeleted = touristService.deleteTouristAttractionByName(attractionName);
@@ -72,7 +72,7 @@ public class TouristController {
             return new ResponseEntity<>("Attraction not found", HttpStatus.NOT_FOUND);
         }
 
-    }
+    }*/
 
     //skal et sted hen pathvariable
     //sorter Requestmapping
@@ -110,6 +110,7 @@ public class TouristController {
                                  @RequestParam List<Tags> tags) {
         System.out.println("Save method called with Name: " + name);
         touristService.addTouristAttraction2(name, description, city, tags);
+
         return "redirect:/attractions";  // Redirect after saving
     }
 
@@ -126,6 +127,14 @@ public class TouristController {
         touristService.updateAttraction(touristAttraction);
         return "redirect:/attractions";
     }
+
+    @PostMapping("/delete/{name}")
+    public String deleteAttraction(@PathVariable("name") String name) {
+        TouristAttraction touristAttraction = touristService.findAttractionByName(name);
+        touristService.deleteAttraction(touristAttraction);
+        return "redirect:/attractions";
+    }
+
 
 
 }
