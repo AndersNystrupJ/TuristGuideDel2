@@ -90,9 +90,9 @@ public class TouristController {
     @GetMapping("/addAttraction")
     public String addAttractions(Model model) {
 
-        /*
+
         TouristAttraction touristAttraction = new TouristAttraction();
-        touristAttraction.setTags(Tags.BAR);
+       // touristAttraction.setTags(Tags.BAR);
 
         //
         model.addAttribute("touristAttraction", touristAttraction);
@@ -102,7 +102,7 @@ public class TouristController {
         model.addAttribute("cities", cities);
         model.addAttribute("attraction", new TouristAttraction());
 
-         */
+
         return "addAttraction";
     }
 
