@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link th:href="@{/style.css}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tags</title>
 </head>
 <body>
+<h1 th:text="${attraction.name} + ' tags'"> Name </h1>
+<table>
+    <tbody>
+    <tr th:each="tag : ${attraction.tags}">
+    <td>
+        <div th:text="${tag.displayTag}"> Tags </div>
+    </td>
+    </tr>
+    </tbody>
+</table>
 
+    <a href="/attractions">
+        <br>
+        <input type="button" value="Back to Attractions">
+    </a>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Attraction</title>
+</head>
+<body>
+
+<h1>Add a New Attraction</h1>
+
+<form th:action="@{/saveAttraction}" th:object="${attraction}" method="post">
+    <!-- Navn på attraktionen -->
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" required /><br>
+
+    <!-- Beskrivelse af attraktionen -->
+    <label for="description">Description:</label>
+    <textarea id="description" th:field="*{description}" rows="4" cols="50" required></textarea><br>
+
+    <!-- Dropdown for byer -->
+    <label for="city">City:</label>
+    <select id="city" th:field="*{city}">
+        <option th:each="city : ${cities}" th:value="${city}" th:text="${city}">City</option>
+    </select><br>
+
+    <!-- Gem-knap -->
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

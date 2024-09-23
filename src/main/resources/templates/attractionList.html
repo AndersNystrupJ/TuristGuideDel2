@@ -12,12 +12,24 @@
     <tr>
         <th> Name </th>
         <th> Description </th>
+        <th> </th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="attraction : ${attractions}">
         <td><span th:text="${attraction.name}"> Name </span></td>
         <td><span th:text="${attraction.getDescription()}"> Description </span></td>
+        <td>
+            <a th:href="@{'/attractions/'+ ${attraction.name} + '/tags'}">
+                <input type="button" value="Tags">
+            </a>
+        </td>
+        <td>
+            <a th:href="@{'/attractions/' + ${attraction.name} + '/edit'}">
+                <input type="button" value="Edit">
+            </a>
+        </td>
+
     </tr>
     </tbody>
 </table>

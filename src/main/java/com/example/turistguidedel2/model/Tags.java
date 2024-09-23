@@ -1,11 +1,14 @@
 package com.example.turistguidedel2.model;
 
-/*
+
 public enum Tags {
-    Underholdning("Underholdning"),
-    Bar("Bar"),
-    Seværdighed("Seværdighed"),
-    Resturant("Restaurant");
+    UNDERHOLDNING("Underholdning"),
+    BAR("Bar"),
+    SEVÆRDIGHED("Seværdighed"),
+    RESTAURANT("Restaurant"),
+    KØBENHAVN("København");
+
+   //måske skal der laves en ny klasse
 
     private String displayTag;
 
@@ -15,6 +18,7 @@ public enum Tags {
     public String getDisplayTag(){
         return displayTag;
     }
+
 }
 
- */
+
