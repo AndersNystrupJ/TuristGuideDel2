@@ -10,7 +10,7 @@ public enum Tags {
 
    //måske skal der laves en ny klasse
 
-    private String displayTag;
+    private final String displayTag;
 
     Tags(String displayTag){
         this.displayTag = displayTag;

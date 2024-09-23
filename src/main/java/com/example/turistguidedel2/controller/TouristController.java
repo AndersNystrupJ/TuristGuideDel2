@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -88,31 +89,28 @@ public class TouristController {
 
     @GetMapping("/addAttraction")
     public String addAttractions(Model model) {
-
-
         TouristAttraction touristAttraction = new TouristAttraction();
-       // touristAttraction.setTags(Tags.BAR);
-        List<Tags> tags = Arrays.asList(Tags.UNDERHOLDNING,Tags.BAR,Tags.RESTAURANT);
-        //
-        model.addAttribute("touristAttraction", touristAttraction);
-        model.addAttribute("Tags", Tags.values());
+        touristAttraction.setTags(new ArrayList<>());  // Initialize the tags list
 
-        // Liste over byer til dropdown
+        // Add the TouristAttraction object and the Tags enum to the model
+        model.addAttribute("touristAttraction", touristAttraction);
+        model.addAttribute("Tags", Tags.values());  // This passes all enum values to the view
+
+        // List of cities for the dropdown
         List<String> cities = Arrays.asList("Copenhagen", "Aarhus", "Odense", "Aalborg", "Esbjerg");
         model.addAttribute("cities", cities);
-        model.addAttribute("attraction", new TouristAttraction());
-
 
         return "addAttraction";
     }
 
     @PostMapping("/save")
-    public String saveAttraction(@ModelAttribute TouristAttraction touristAttraction) {
-        /*
-        touristAttraction.save(touristAttraction);
-
-         */
-        return "redirect:/addAttraction";
+    public String saveAttraction(@RequestParam String name,
+                                 @RequestParam String description,
+                                 @RequestParam String city,
+                                 @RequestParam List<Tags> tags) {
+        System.out.println("Save method called with Name: " + name);
+        touristService.addTouristAttraction2(name, description, city, tags);
+        return "redirect:/attractions";  // Redirect after saving
     }
 
 

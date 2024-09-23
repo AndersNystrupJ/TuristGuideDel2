@@ -3,7 +3,6 @@ import com.example.turistguidedel2.model.Tags;
 import com.example.turistguidedel2.model.TouristAttraction;
 import org.springframework.stereotype.Repository;
 
-import javax.swing.text.html.HTML;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,6 +41,9 @@ public class TouristRepository {
         return touristAttraction;
     }
 
+    public void addTouristAttraction2(String name, String description, String by, List<Tags> tags) {
+        touristAttractions.add(new TouristAttraction(name, description, by, tags));
+    }
 
     public List<TouristAttraction> getAllTouristAttractions() {
         return touristAttractions;
@@ -61,4 +63,5 @@ public class TouristRepository {
     public void addTouristAttraction(TouristAttraction touristAttraction) {
         touristAttractions.add(touristAttraction);
     }
+
 }

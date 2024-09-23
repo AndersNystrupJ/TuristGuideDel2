@@ -7,7 +7,7 @@
 
 <h1>Add a New Attraction</h1>
 
-<form th:action="@{/saveAttraction}" th:object="${attraction}" method="post">
+<form th:action="@{/attractions/save}" th:object="${touristAttraction}" method="post">
     <!-- Navn på attraktionen -->
     <label for="name">Name:</label>
     <input type="text" id="name" th:field="*{name}" required /><br>
@@ -23,10 +23,10 @@
     </select><br>
 
     <label for="Tags">Tags:</label>
-    <div id="Tags" th:each="tags : ${Tags}">
-        <input type="checkbox"  th:value="${tags}" th:text="${tags.getDisplayTag()}" />
+    <div th:each="tag : ${Tags}">
+        <input type="checkbox" th:field="*{tags}" th:value="${tag}" />
+        <label th:text="${tag}"></label>
     </div>
-
 
     <!-- Gem-knap -->
     <button type="submit">Save</button>

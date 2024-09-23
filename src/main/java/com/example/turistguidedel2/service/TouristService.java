@@ -1,4 +1,5 @@
 package com.example.turistguidedel2.service;
+import com.example.turistguidedel2.model.Tags;
 import com.example.turistguidedel2.model.TouristAttraction;
 import com.example.turistguidedel2.repository.TouristRepository;
 import org.springframework.stereotype.Service;
@@ -23,9 +24,14 @@ public class TouristService {
     }
 
     //POSTMAPPING
+
+    public void addTouristAttraction2(String name, String description, String city, List<Tags> tags) {
+        touristRepository.addTouristAttraction2(name, description, city, tags);
+    }
     public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction){
         return touristRepository.addAttraction(touristAttraction);
     }
+
 
     /*public TouristAttraction updateAttraction(TouristAttraction touristAttraction){
         touristRepository.updateAttraction(touristAttraction);
