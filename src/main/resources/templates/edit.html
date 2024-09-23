@@ -7,12 +7,10 @@
 </head>
 <body>
 <h1>Update information</h1>
-<form th:action="@{'/attractions/' + ${attraction.name} + '/edit'}" th:object="${attraction}" method="post">
+<form th:action="@{/attractions/update}" th:object="${attraction}" method="post">
 
-    <label th:for="name">Name:</label>
-    <input th:type="text" th:id="name" th:name="*{name}" required>
-    <br>
-    <br>
+    <input th:type="hidden" th:name="*{name}" />
+
     <label th:for="description">Description:</label>
     <input th:type="text" th:id="description" th:name="*{description}" required>
     <br>
@@ -26,13 +24,16 @@
         <input type="checkbox" th:field="*{tags}" th:value="${tag}" /> <span th:text="${tag.displayTag}">
     </span>
     </div>
+    <br>
+    <br>
+    <button type="submit">Apply changes</button>
 
 
 </form>
 <br>
 <br>
-<a href="/attractions/update">
-<input type="button" value="Apply changes">
+<a href="/attractions">
+<input type="button" value="Back to attractions">
 </a>
 
 </body>

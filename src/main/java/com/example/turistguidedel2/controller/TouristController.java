@@ -126,7 +126,7 @@ public class TouristController {
     @PostMapping("/update")
     public String updateAttraction(@ModelAttribute TouristAttraction touristAttraction){
         touristService.updateAttraction(touristAttraction);
-        return "updateAttraction";
+        return "redirect:/attractions";
     }
 
     @PostMapping("/delete/{name}")
