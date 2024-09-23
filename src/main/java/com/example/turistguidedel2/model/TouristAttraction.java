@@ -11,7 +11,6 @@ public class TouristAttraction {
     private List<Tags> tags;
 
     public TouristAttraction(){
-
     }
 
     public TouristAttraction(String name, String description, String city, List<Tags> tags) {

@@ -21,7 +21,7 @@ public class TouristRepository {
         touristAttractions.add(new TouristAttraction("The round tower", "36m høj bygning på strøget. Bygget i 1600-tallet.", "København",List.of(Tags.SEVÆRDIGHED, Tags.UNDERHOLDNING)));
         touristAttractions.add(new TouristAttraction("The little mermaid", "Lille bronzestatue i vandet ved langelinie. Illustrerer den lille havfrue fra H.C. Andersens eventyr.", "Købenavn", List.of(Tags.SEVÆRDIGHED)));
         touristAttractions.add(new TouristAttraction("Proud Mary", "Hjertet af Københavns natteliv med gode chancer for at drikke dig fuldkommen sønder og sammen.","København",List.of(Tags.UNDERHOLDNING,Tags.BAR)));
-        touristAttractions.add(new TouristAttraction("Nyhavn", "Old harbour in the center of Copenhagen, dominated by colorful buildings, and a cozy atmosphere with restaurants along the promenade", "København", List.of(Tags.RESTAURANT, Tags.KØBENHAVN)));
+        touristAttractions.add(new TouristAttraction("Nyhavn", "Old harbour in the center of Copenhagen, dominated by colorful buildings, and a cozy atmosphere with restaurants along the promenade", "København", List.of(Tags.RESTAURANT)));
     }
 
     //GETMAPPING-ATTRACTION{NAME}

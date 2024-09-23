@@ -119,13 +119,14 @@ public class TouristController {
     public String editAttraction (@PathVariable("name") String name, Model model) {
         TouristAttraction attraction = touristService.findAttractionByName(name);
         model.addAttribute("attraction", attraction);
+        model.addAttribute("tags", Tags.values());
         return "edit";
     }
     
     @PostMapping("/update")
     public String updateAttraction(@ModelAttribute TouristAttraction touristAttraction){
         touristService.updateAttraction(touristAttraction);
-        return "redirect:/attractions";
+        return "updateAttraction";
     }
 
     @PostMapping("/delete/{name}")

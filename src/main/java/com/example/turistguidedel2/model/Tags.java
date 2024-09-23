@@ -5,8 +5,7 @@ public enum Tags {
     UNDERHOLDNING("Underholdning"),
     BAR("Bar"),
     SEVÆRDIGHED("Seværdighed"),
-    RESTAURANT("Restaurant"),
-    KØBENHAVN("København");
+    RESTAURANT("Restaurant");
 
    //måske skal der laves en ny klasse
 

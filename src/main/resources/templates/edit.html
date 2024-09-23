@@ -12,8 +12,28 @@
     <label th:for="name">Name:</label>
     <input th:type="text" th:id="name" th:name="*{name}" required>
     <br>
+    <br>
+    <label th:for="description">Description:</label>
+    <input th:type="text" th:id="description" th:name="*{description}" required>
+    <br>
+    <br>
+    <label th:for="city">City:</label>
+    <input th:type="text" th:id="city" th:name="*{city}" required>
+    <br>
+    <br>
+    <label for="tags">Tags:</label>
+    <div id="tags" th:each="tag : ${tags}">
+        <input type="checkbox" th:field="*{tags}" th:value="${tag}" /> <span th:text="${tag.displayTag}">
+    </span>
+    </div>
+
 
 </form>
+<br>
+<br>
+<a href="/attractions/update">
+<input type="button" value="Apply changes">
+</a>
 
 </body>
 </html>
