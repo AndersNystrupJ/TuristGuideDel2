@@ -3,7 +3,6 @@ package com.example.turistguidedel2.controller;
 import com.example.turistguidedel2.model.Tags;
 import com.example.turistguidedel2.model.TouristAttraction;
 import com.example.turistguidedel2.service.TouristService;
-import org.springframework.core.metrics.StartupStep;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -90,19 +89,20 @@ public class TouristController {
     @GetMapping("/addAttraction")
     public String addAttractions(Model model) {
 
-        /*
-        TouristAttraction touristAttraction = new TouristAttraction();
-        touristAttraction.setTags(Tags.BAR);
 
+        TouristAttraction touristAttraction = new TouristAttraction();
+       // touristAttraction.setTags(Tags.BAR);
+        List<Tags> tags = Arrays.asList(Tags.UNDERHOLDNING,Tags.BAR,Tags.RESTAURANT);
         //
         model.addAttribute("touristAttraction", touristAttraction);
         model.addAttribute("Tags", Tags.values());
+
         // Liste over byer til dropdown
         List<String> cities = Arrays.asList("Copenhagen", "Aarhus", "Odense", "Aalborg", "Esbjerg");
         model.addAttribute("cities", cities);
         model.addAttribute("attraction", new TouristAttraction());
 
-         */
+
         return "addAttraction";
     }
 

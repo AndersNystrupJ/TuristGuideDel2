@@ -22,6 +22,12 @@
         <option th:each="city : ${cities}" th:value="${city}" th:text="${city}">City</option>
     </select><br>
 
+    <label for="Tags">Tags:</label>
+    <div id="Tags" th:each="tags : ${Tags}">
+        <input type="checkbox"  th:value="${tags}" th:text="${tags.getDisplayTag()}" />
+    </div>
+
+
     <!-- Gem-knap -->
     <button type="submit">Save</button>
 </form>
