@@ -120,14 +120,32 @@ public class TouristController {
         TouristAttraction attraction = touristService.findAttractionByName(name);
         model.addAttribute("attraction", attraction);
         model.addAttribute("tags", Tags.values());
+        model.addAttribute("name", attraction.getName());
         return "edit";
     }
-    
+
+
+
+    // TO MÅDER AT LAVE UPDATE PÅ:
+
     @PostMapping("/update")
-    public String updateAttraction(@ModelAttribute TouristAttraction touristAttraction){
+    public String updateAttraction(@RequestParam String name,
+                                   @RequestParam String description,
+                                   @RequestParam String city,
+                                   @RequestParam List<Tags> tags) {
+        TouristAttraction touristAttraction = new TouristAttraction(name, description, city, tags);
         touristService.updateAttraction(touristAttraction);
         return "redirect:/attractions";
     }
+
+/*
+    @PostMapping("/update")
+    public String updateAttraction (@ModelAttribute TouristAttraction touristAttraction) {
+        touristService.updateAttraction(touristAttraction);
+        return "redirect:/attractions";
+    }
+
+ */
 
     @PostMapping("/delete/{name}")
     public String deleteAttraction(@PathVariable("name") String name) {
