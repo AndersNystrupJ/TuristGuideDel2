@@ -9,14 +9,14 @@
 <h1>Update information</h1>
 <form th:action="@{/attractions/update}" th:object="${attraction}" method="post">
 
-    <input th:type="hidden" th:name="*{name}" th:value="*{name}" th:field="*{name}" />
+    <input th:type="hidden" th:name="name" th:value="*{name}" />
 
-    <label th:for="description">Description:</label>
-    <input th:type="text" th:id="description" th:name="*{description}" th:value="*{description}" th:field="*{description}" required>
+    <label th:for="description">Description:</label><br>
+    <input th:type="text" th:id="description" th:name="description" th:value="*{description}" required>
     <br>
     <br>
-    <label th:for="city">City:</label>
-    <input th:type="text" th:id="city" th:name="*{city}" th:value="*{city}" th:field="*{city}" required>
+    <label th:for="city">City:</label><br>
+    <input th:type="text" th:id="city" th:name="city" th:value="*{city}" required>
     <br>
     <br>
     <label for="tags">Tags:</label>
