@@ -11,6 +11,8 @@ on:
 
 jobs:
   build:
+
+
     runs-on: ubuntu-latest
 
     steps:
@@ -30,6 +32,10 @@ jobs:
         with:
           name: java-app
           path: '${{ github.workspace }}/target/*.jar'
+
+      - name: Publish Test Report
+        if: succes() || failure()
+        uses: sacap/action-surefire-report@v1
 
   deploy:
     runs-on: ubuntu-latest
