@@ -34,7 +34,7 @@ jobs:
           path: '${{ github.workspace }}/target/*.jar'
 
       - name: Publish Test Report
-        if: succes() || failure()
+        if: success() || failure()
         uses: sacap/action-surefire-report@v1
 
   deploy:
